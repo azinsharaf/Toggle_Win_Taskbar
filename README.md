@@ -31,7 +31,7 @@ This script doesn’t try to hack the shell too aggressively. Instead, it toggle
 1. Install AutoHotkey v2 (64-bit) from the official website.
 2. Download or clone this repository:
    - Download: click **Code → Download ZIP**, then extract.
-   - Or with Git: `git clone https://github.com/your-username/Toggle_Win_Taskbar.git`
+   - Or with Git: `git clone https://github.com/azinsharaf/Toggle_Win_Taskbar.git`
 3. Make sure the file Toggle_Win_Taskbar.ahk is on your system.
 
 ---
@@ -68,7 +68,7 @@ The core logic lives in the HideShowTaskbar(hide) function inside Toggle_Win_Tas
   - Primary taskbar: Shell_TrayWnd
   - Secondary taskbars (multi-monitor): Shell_SecondaryTrayWnd
 - For each of these windows, it uses AutoHotkey’s WinSetTransparent to control opacity:
-  - When hiding, transparency is set to  (fully transparent).
+  - When hiding, transparency is set to On (fully transparent).
   - When showing, transparency is set to Off (normal/opaque again).
 
 This approach keeps the taskbar logic inside Windows itself (auto-hide vs always-on-top), while using transparency to make the taskbar effectively invisible when hidden. That means far fewer crashes or weird side effects compared to heavier third-party hacks.
@@ -83,3 +83,4 @@ If you like it and want it always available:
 - Place a shortcut to Toggle_Win_Taskbar.ahk (or a compiled .exe if you make one) in that folder.
 
 Windows will then start the script automatically when you log in.
+
