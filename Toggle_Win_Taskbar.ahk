@@ -37,15 +37,12 @@ HideShowTaskbar(hide) {
 
     ; Make taskbar windows fully transparent when hidden,
     ; restore normal opacity when shown.
-    if hide {
-        if WinExist(ShellTray)
-            WinSetTransparent 0, ShellTray
-        if WinExist(SecondaryTray)
-            WinSetTransparent 0, SecondaryTray
-    } else {
-        if WinExist(ShellTray)
-            WinSetTransparent "Off", ShellTray
-        if WinExist(SecondaryTray)
-            WinSetTransparent "Off", SecondaryTray
-    }
+    val := hide ? 0 : "Off"
+
+    if WinExist(ShellTray)
+        WinSetTransparent val, ShellTray
+
+    ; Handle ALL secondary taskbars (one per additional monitor)
+    for hwnd in WinGetList(SecondaryTray)
+        WinSetTransparent val, hwnd
 }
