@@ -83,4 +83,3 @@ If you like it and want it always available:
 - Place a shortcut to Toggle_Win_Taskbar.ahk (or a compiled .exe if you make one) in that folder.
 
 Windows will then start the script automatically when you log in.
-
