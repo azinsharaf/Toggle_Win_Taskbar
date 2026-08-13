@@ -1,3 +1,5 @@
+
+
 # Toggle Win Taskbar (AutoHotkey)
 
 A tiny AutoHotkey script to quickly hide/show the Windows taskbar on Windows 10/11.
@@ -63,7 +65,7 @@ This script doesn’t try to hack the shell too aggressively. Instead, it toggle
 The core logic lives in the HideShowTaskbar(hide) function inside Toggle_Win_Taskbar.ahk.
 
 - It prepares an APPBARDATA structure in memory and calls the SHAppBarMessage function from Shell32.dll with the ABM_SETSTATE message.
-- When hide is rue, it sets the taskbar state to ABS_AUTOHIDE. When hide is alse, it sets it to ABS_ALWAYSONTOP.
+- When hide is true, it sets the taskbar state to ABS_AUTOHIDE. When hide is false, it sets it to ABS_ALWAYSONTOP.
 - The script finds the taskbar windows using their window classes:
   - Primary taskbar: Shell_TrayWnd
   - Secondary taskbars (multi-monitor): Shell_SecondaryTrayWnd
